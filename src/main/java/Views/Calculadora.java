@@ -597,33 +597,56 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
-        switch (operador) {
-            case "+":
-                segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
-                primernumero = transformer(primernumeroCadena);
-                segundonumero = transformer(segundonumeroCadena);
-                cuadro.setText(df.format(primernumero + segundonumero));
-                break;
-            case "-":
-                segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
-                primernumero = transformer(primernumeroCadena);
-                segundonumero = transformer(segundonumeroCadena);
-                cuadro.setText(df.format(primernumero - segundonumero));
-                break;
-            case "/":
-                segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
-                primernumero = transformer(primernumeroCadena);
-                segundonumero = transformer(segundonumeroCadena);
-                cuadro.setText(df.format(primernumero / segundonumero));
-                break;
-            case "*":
-                segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
-                primernumero = transformer(primernumeroCadena);
-                segundonumero = transformer(segundonumeroCadena);
-                cuadro.setText(df.format(primernumero * segundonumero));
-                break;
-            default:
-                break;
+        if(cuadro.getText().contains("+") || cuadro.getText().contains("-") || cuadro.getText().contains("*") || cuadro.getText().contains("/")){
+            switch (operador) {
+                case "+":
+                    segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
+                    primernumero = transformer(primernumeroCadena);
+                    segundonumero = transformer(segundonumeroCadena);
+                    cuadro.setText(df.format(primernumero + segundonumero));
+                    break;
+                case "-":
+                    segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
+                    primernumero = transformer(primernumeroCadena);
+                    segundonumero = transformer(segundonumeroCadena);
+                    cuadro.setText(df.format(primernumero - segundonumero));
+                    break;
+                case "/":
+                    segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
+                    primernumero = transformer(primernumeroCadena);
+                    segundonumero = transformer(segundonumeroCadena);
+                    cuadro.setText(df.format(primernumero / segundonumero));
+                    break;
+                case "*":
+                    segundonumeroCadena = cuadro.getText().substring(primernumeroCadena.length() + 1, cuadro.getText().length());
+                    primernumero = transformer(primernumeroCadena);
+                    segundonumero = transformer(segundonumeroCadena);
+                    cuadro.setText(df.format(primernumero * segundonumero));
+                    break;
+                default:
+                    break;
+            }
+        }else{
+            switch (operador) {
+                case "+":
+                    primernumero=transformer(cuadro.getText());
+                    cuadro.setText(df.format(primernumero + segundonumero));
+                    break;
+                case "-":
+                    primernumero = transformer(cuadro.getText());
+                    cuadro.setText(df.format(primernumero - segundonumero));
+                    break;
+                case "/":
+                    primernumero = transformer(cuadro.getText());
+                    cuadro.setText(df.format(primernumero / segundonumero));
+                    break;
+                case "*":
+                    primernumero = transformer(cuadro.getText());
+                    cuadro.setText(df.format(primernumero * segundonumero));
+                    break;
+                default:
+                    break;
+            }
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
