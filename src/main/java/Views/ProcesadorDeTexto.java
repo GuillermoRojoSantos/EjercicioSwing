@@ -4,12 +4,14 @@
  */
 package Views;
 
+import java.awt.Font;
 import java.io.BufferedReader;
 import javax.swing.JFileChooser;
 import java.io.*;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.Color.*;
 
 /**
  *
@@ -22,8 +24,16 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
      */
     public ProcesadorDeTexto() {
         initComponents();
+        modalDialog.setLocationRelativeTo(null);
+        dialogFuente.setLocationRelativeTo(null);
     }
-
+    
+    private float fontSize =12f;
+    private final Font arial = new Font("Arial",Font.PLAIN,12);
+    private final Font arialBlack = new Font("Arial Black", Font.PLAIN, 12);
+    private final Font timesNRoman = new Font("Times New Roman", Font.PLAIN, 12);
+    private final Font microsoftHimalaya = new Font("Microsoft Himalaya", Font.PLAIN, 12);
+    private final Font comicSans = new Font("Comic Sans MS", Font.PLAIN, 12);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +52,16 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnRepo = new javax.swing.JButton();
+        dialogFuente = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        btnAceptarFuente = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listaTamanoFuente = new javax.swing.JList<>();
+        comboBoxFuentes = new javax.swing.JComboBox<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtPrueba = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -71,12 +91,15 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        btnColor = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         modalDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         modalDialog.setTitle("Acerca de...");
-        modalDialog.setMinimumSize(new java.awt.Dimension(411, 236));
+        modalDialog.setMinimumSize(new java.awt.Dimension(324, 216));
         modalDialog.setModal(true);
-        modalDialog.setPreferredSize(new java.awt.Dimension(411, 236));
+        modalDialog.setPreferredSize(new java.awt.Dimension(324, 216));
+        modalDialog.setResizable(false);
 
         jPanel4.setRequestFocusEnabled(false);
         jPanel4.setLayout(new java.awt.BorderLayout());
@@ -109,6 +132,73 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jPanel4.add(jPanel8, java.awt.BorderLayout.CENTER);
 
         modalDialog.getContentPane().add(jPanel4, java.awt.BorderLayout.CENTER);
+
+        dialogFuente.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogFuente.setTitle("Fuentes");
+        dialogFuente.setMinimumSize(new java.awt.Dimension(507, 346));
+        dialogFuente.setModal(true);
+        dialogFuente.setPreferredSize(new java.awt.Dimension(507, 346));
+
+        jPanel9.setLayout(new java.awt.BorderLayout());
+
+        jPanel10.setLayout(new java.awt.BorderLayout());
+
+        btnAceptarFuente.setText("Aceptar");
+        btnAceptarFuente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarFuenteActionPerformed(evt);
+            }
+        });
+        jPanel10.add(btnAceptarFuente, java.awt.BorderLayout.EAST);
+
+        jPanel9.add(jPanel10, java.awt.BorderLayout.SOUTH);
+
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        listaTamanoFuente.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36", "38" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaTamanoFuente.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaTamanoFuente.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaTamanoFuenteValueChanged(evt);
+            }
+        });
+        jScrollPane3.setViewportView(listaTamanoFuente);
+
+        jPanel12.add(jScrollPane3);
+
+        comboBoxFuentes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arial", "Arial Black", "Times New Roman", "Helvetica", "Comic Sans" }));
+        comboBoxFuentes.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxFuentesItemStateChanged(evt);
+            }
+        });
+        jPanel12.add(comboBoxFuentes);
+
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        txtPrueba.setText("Texto de prueba");
+        txtPrueba.setAutoscrolls(false);
+        txtPrueba.setFocusable(false);
+        txtPrueba.setMinimumSize(new java.awt.Dimension(200, 200));
+        txtPrueba.setPreferredSize(new java.awt.Dimension(200, 200));
+        txtPrueba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPruebaActionPerformed(evt);
+            }
+        });
+        jScrollPane4.setViewportView(txtPrueba);
+
+        jPanel12.add(jScrollPane4);
+
+        jPanel9.add(jPanel12, java.awt.BorderLayout.CENTER);
+
+        dialogFuente.getContentPane().add(jPanel9, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Procesador de texto");
@@ -219,11 +309,24 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
+
+        btnColor.setText("Fuente");
+        btnColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnColor);
+
+        jMenuItem5.setText("Color");
+        jMenu2.add(jMenuItem5);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAbrirActionPerformed
@@ -278,6 +381,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
                     bfw.write(sc.nextLine());
                     bfw.newLine();
                 }
+                sc.close();
             }catch(IOException e){
                 Logger.getLogger(ProcesadorDeTexto.class.getName()).log(Level.SEVERE, null, e);
             }
@@ -288,7 +392,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
 
     private void btnRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRepoActionPerformed
         // TODO add your handling code here:
-        openWebPage("www.google.com");
+        openWebPage("https://github.com/GuillermoRojoSantos/EjercicioSwing.git");
     }//GEN-LAST:event_btnRepoActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -301,12 +405,190 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
                 bfw.write(sc.nextLine());
                 bfw.newLine();
             }
+            sc.close();
         } catch (IOException e) {
             Logger.getLogger(ProcesadorDeTexto.class.getName()).log(Level.SEVERE, null, e);
         }
         var file = new File(direccion);
         txtTamaño.setText(Long.toString(file.length()));;
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btnColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorActionPerformed
+        // TODO add your handling code here:
+        dialogFuente.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_btnColorActionPerformed
+
+    private void listaTamanoFuenteValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaTamanoFuenteValueChanged
+        // TODO add your handling code here:
+        int result = listaTamanoFuente.getSelectedIndex();
+        switch (result) {
+            case 0 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(12f));
+                fontSize = 12f;
+            }
+            case 1 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(14f));
+                fontSize = 14f;
+            }
+            case 2 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(16f));
+                fontSize = 16f;
+            }
+            case 3 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(18f));
+                fontSize = 18f;
+            }
+            case 4 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(20f));
+                fontSize = 20f;
+            }
+            case 5 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(22f));
+                fontSize = 22f;
+            }
+            case 6 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(24f));
+                fontSize = 24f;
+            }
+            case 7 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(26f));
+                fontSize = 26f;
+            }
+            case 8 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(28f));
+                fontSize = 28f;
+            }
+            case 9 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(30f));
+                fontSize = 30f;
+            }
+            case 10 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(32f));
+                fontSize = 32f;
+            }
+            case 11 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(34f));
+                fontSize = 34f;
+            }
+            case 12 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(36f));
+                fontSize = 36f;
+            }
+            case 13 -> {
+                txtPrueba.setFont(texto.getFont().deriveFont(38f));
+                fontSize = 38f;
+            }
+            default -> {
+            }
+        }
+        txtPrueba.setFont(txtPrueba.getFont());
+    }//GEN-LAST:event_listaTamanoFuenteValueChanged
+
+    private void comboBoxFuentesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxFuentesItemStateChanged
+        // TODO add your handling code here:
+        int fuente = comboBoxFuentes.getSelectedIndex();
+        switch (fuente) {
+            case 0 ->
+                txtPrueba.setFont(arial.deriveFont(fontSize));
+            case 1 ->
+                txtPrueba.setFont(arialBlack.deriveFont(fontSize));
+            case 2 ->
+                txtPrueba.setFont(timesNRoman.deriveFont(fontSize));
+            case 3 ->
+                txtPrueba.setFont(microsoftHimalaya.deriveFont(fontSize));
+            case 4 ->
+                txtPrueba.setFont(comicSans.deriveFont(fontSize));
+            default -> {
+            }
+        }
+    }//GEN-LAST:event_comboBoxFuentesItemStateChanged
+
+    private void btnAceptarFuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarFuenteActionPerformed
+        // TODO add your handling code here:
+        int fuente = comboBoxFuentes.getSelectedIndex();
+        int result = listaTamanoFuente.getSelectedIndex();
+        switch (result) {
+            case 0 -> {
+                texto.setFont(texto.getFont().deriveFont(12f));
+                fontSize = 12f;
+            }
+            case 1 -> {
+                texto.setFont(texto.getFont().deriveFont(14f));
+                fontSize = 14f;
+            }
+            case 2 -> {
+                texto.setFont(texto.getFont().deriveFont(16f));
+                fontSize = 16f;
+            }
+            case 3 -> {
+                texto.setFont(texto.getFont().deriveFont(18f));
+                fontSize = 18f;
+            }
+            case 4 -> {
+                texto.setFont(texto.getFont().deriveFont(20f));
+                fontSize = 20f;
+            }
+            case 5 -> {
+                texto.setFont(texto.getFont().deriveFont(22f));
+                fontSize = 22f;
+            }
+            case 6 -> {
+                texto.setFont(texto.getFont().deriveFont(24f));
+                fontSize = 24f;
+            }
+            case 7 -> {
+                texto.setFont(texto.getFont().deriveFont(26f));
+                fontSize = 26f;
+            }
+            case 8 -> {
+                texto.setFont(texto.getFont().deriveFont(28f));
+                fontSize = 28f;
+            }
+            case 9 -> {
+                texto.setFont(texto.getFont().deriveFont(30f));
+                fontSize = 30f;
+            }
+            case 10 -> {
+                texto.setFont(texto.getFont().deriveFont(32f));
+                fontSize = 32f;
+            }
+            case 11 -> {
+                texto.setFont(texto.getFont().deriveFont(34f));
+                fontSize = 34f;
+            }
+            case 12 -> {
+                texto.setFont(texto.getFont().deriveFont(36f));
+                fontSize = 36f;
+            }
+            case 13 -> {
+                texto.setFont(texto.getFont().deriveFont(38f));
+                fontSize = 38f;
+            }
+            default -> {
+            }
+        }
+        texto.setFont(texto.getFont());
+        
+        switch (fuente) {
+            case 0 ->
+                texto.setFont(arial.deriveFont(fontSize));
+            case 1 ->
+                texto.setFont(arialBlack.deriveFont(fontSize));
+            case 2 ->
+                texto.setFont(timesNRoman.deriveFont(fontSize));
+            case 3 ->
+                texto.setFont(microsoftHimalaya.deriveFont(fontSize));
+            case 4 ->
+                texto.setFont(comicSans.deriveFont(fontSize));
+            default -> {
+            }
+        }
+        dialogFuente.dispose();
+    }//GEN-LAST:event_btnAceptarFuenteActionPerformed
+
+    private void txtPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPruebaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPruebaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,7 +636,11 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuAbrir;
     private javax.swing.JMenuItem MeunGuardar;
+    private javax.swing.JButton btnAceptarFuente;
+    private javax.swing.JMenuItem btnColor;
     private javax.swing.JButton btnRepo;
+    private javax.swing.JComboBox<String> comboBoxFuentes;
+    private javax.swing.JDialog dialogFuente;
     private javax.swing.JFileChooser fileChooser;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
@@ -375,7 +661,10 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -383,12 +672,17 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JList<String> listaTamanoFuente;
     private javax.swing.JDialog modalDialog;
     private rojeru_san.RSLabelHora rSLabelHora1;
     private javax.swing.JTextPane texto;
     private javax.swing.JTextArea txtAreaUbi;
+    private javax.swing.JTextField txtPrueba;
     private javax.swing.JTextField txtTamaño;
     // End of variables declaration//GEN-END:variables
 }

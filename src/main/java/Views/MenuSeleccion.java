@@ -16,6 +16,7 @@ public class MenuSeleccion extends javax.swing.JFrame {
      */
     public MenuSeleccion() {
         initComponents();
+        
     }
     
     
@@ -52,6 +53,9 @@ public class MenuSeleccion extends javax.swing.JFrame {
         });
     }
 
+    private static void procesadorDeTexto(){
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,6 +155,7 @@ public class MenuSeleccion extends javax.swing.JFrame {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalculadoraActionPerformed
