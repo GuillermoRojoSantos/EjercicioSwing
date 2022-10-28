@@ -4,6 +4,7 @@
  */
 package Views;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.io.BufferedReader;
 import javax.swing.JFileChooser;
@@ -11,7 +12,6 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.awt.Color.*;
 
 /**
  *
@@ -26,6 +26,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         initComponents();
         modalDialog.setLocationRelativeTo(null);
         dialogFuente.setLocationRelativeTo(null);
+        dialogColor.setLocationRelativeTo(null);
     }
     
     private float fontSize =12f;
@@ -62,6 +63,45 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         comboBoxFuentes = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         txtPrueba = new javax.swing.JTextField();
+        dialogColor = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        btnColorAzul = new javax.swing.JButton();
+        filler17 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler18 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler19 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler29 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        jPanel14 = new javax.swing.JPanel();
+        btnColorAzulOscuro = new javax.swing.JButton();
+        filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler20 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler21 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler28 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        jPanel15 = new javax.swing.JPanel();
+        btnColorRojo = new javax.swing.JButton();
+        filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler16 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler22 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler30 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        jPanel16 = new javax.swing.JPanel();
+        btnColorCyan = new javax.swing.JButton();
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler23 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler27 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        jPanel17 = new javax.swing.JPanel();
+        btnColorVerde = new javax.swing.JButton();
+        filler13 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler14 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler24 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler31 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        jPanel18 = new javax.swing.JPanel();
+        btnColorRosa = new javax.swing.JButton();
+        filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        filler25 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
+        filler26 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -183,7 +223,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         txtPrueba.setText("Texto de prueba");
-        txtPrueba.setAutoscrolls(false);
+        txtPrueba.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtPrueba.setFocusable(false);
         txtPrueba.setMinimumSize(new java.awt.Dimension(200, 200));
         txtPrueba.setPreferredSize(new java.awt.Dimension(200, 200));
@@ -199,6 +239,135 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jPanel9.add(jPanel12, java.awt.BorderLayout.CENTER);
 
         dialogFuente.getContentPane().add(jPanel9, java.awt.BorderLayout.CENTER);
+
+        dialogColor.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogColor.setTitle("Colores");
+        dialogColor.setMaximumSize(new java.awt.Dimension(403, 237));
+        dialogColor.setMinimumSize(new java.awt.Dimension(403, 237));
+        dialogColor.setPreferredSize(new java.awt.Dimension(403, 237));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Seleccione un color:");
+        dialogColor.getContentPane().add(jLabel7, java.awt.BorderLayout.PAGE_START);
+
+        jPanel11.setLayout(new java.awt.GridLayout(3, 2));
+
+        jPanel13.setLayout(new java.awt.BorderLayout());
+
+        btnColorAzul.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnColorAzul.setForeground(new java.awt.Color(51, 51, 255));
+        btnColorAzul.setText("Azul");
+        btnColorAzul.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
+        btnColorAzul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorAzulActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnColorAzul, java.awt.BorderLayout.CENTER);
+        jPanel13.add(filler17, java.awt.BorderLayout.PAGE_END);
+        jPanel13.add(filler18, java.awt.BorderLayout.PAGE_START);
+        jPanel13.add(filler19, java.awt.BorderLayout.LINE_END);
+        jPanel13.add(filler29, java.awt.BorderLayout.LINE_START);
+
+        jPanel11.add(jPanel13);
+
+        jPanel14.setLayout(new java.awt.BorderLayout());
+
+        btnColorAzulOscuro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnColorAzulOscuro.setForeground(new java.awt.Color(153, 153, 153));
+        btnColorAzulOscuro.setText("Gris");
+        btnColorAzulOscuro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 2, true));
+        btnColorAzulOscuro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorAzulOscuroActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnColorAzulOscuro, java.awt.BorderLayout.CENTER);
+        jPanel14.add(filler9, java.awt.BorderLayout.PAGE_END);
+        jPanel14.add(filler20, java.awt.BorderLayout.PAGE_START);
+        jPanel14.add(filler21, java.awt.BorderLayout.LINE_START);
+        jPanel14.add(filler28, java.awt.BorderLayout.LINE_END);
+
+        jPanel11.add(jPanel14);
+
+        jPanel15.setLayout(new java.awt.BorderLayout());
+
+        btnColorRojo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnColorRojo.setForeground(new java.awt.Color(255, 0, 0));
+        btnColorRojo.setText("Rojo");
+        btnColorRojo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 0, 0), 2, true));
+        btnColorRojo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorRojoActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnColorRojo, java.awt.BorderLayout.CENTER);
+        jPanel15.add(filler15, java.awt.BorderLayout.PAGE_END);
+        jPanel15.add(filler16, java.awt.BorderLayout.PAGE_START);
+        jPanel15.add(filler22, java.awt.BorderLayout.LINE_END);
+        jPanel15.add(filler30, java.awt.BorderLayout.LINE_START);
+
+        jPanel11.add(jPanel15);
+
+        jPanel16.setLayout(new java.awt.BorderLayout());
+
+        btnColorCyan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnColorCyan.setForeground(new java.awt.Color(102, 255, 255));
+        btnColorCyan.setText("Cyan");
+        btnColorCyan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 255), 2, true));
+        btnColorCyan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorCyanActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnColorCyan, java.awt.BorderLayout.CENTER);
+        jPanel16.add(filler8, java.awt.BorderLayout.PAGE_END);
+        jPanel16.add(filler10, java.awt.BorderLayout.PAGE_START);
+        jPanel16.add(filler23, java.awt.BorderLayout.LINE_START);
+        jPanel16.add(filler27, java.awt.BorderLayout.LINE_END);
+
+        jPanel11.add(jPanel16);
+
+        jPanel17.setLayout(new java.awt.BorderLayout());
+
+        btnColorVerde.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnColorVerde.setForeground(new java.awt.Color(0, 255, 0));
+        btnColorVerde.setText("Verde");
+        btnColorVerde.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 0), 2, true));
+        btnColorVerde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorVerdeActionPerformed(evt);
+            }
+        });
+        jPanel17.add(btnColorVerde, java.awt.BorderLayout.CENTER);
+        jPanel17.add(filler13, java.awt.BorderLayout.PAGE_END);
+        jPanel17.add(filler14, java.awt.BorderLayout.PAGE_START);
+        jPanel17.add(filler24, java.awt.BorderLayout.LINE_END);
+        jPanel17.add(filler31, java.awt.BorderLayout.LINE_START);
+
+        jPanel11.add(jPanel17);
+
+        jPanel18.setLayout(new java.awt.BorderLayout());
+
+        btnColorRosa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnColorRosa.setForeground(new java.awt.Color(255, 204, 204));
+        btnColorRosa.setText("Rosa");
+        btnColorRosa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 204), 2, true));
+        btnColorRosa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColorRosaActionPerformed(evt);
+            }
+        });
+        jPanel18.add(btnColorRosa, java.awt.BorderLayout.CENTER);
+        jPanel18.add(filler11, java.awt.BorderLayout.PAGE_START);
+        jPanel18.add(filler12, java.awt.BorderLayout.PAGE_END);
+        jPanel18.add(filler25, java.awt.BorderLayout.LINE_START);
+        jPanel18.add(filler26, java.awt.BorderLayout.LINE_END);
+
+        jPanel11.add(jPanel18);
+
+        dialogColor.getContentPane().add(jPanel11, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Procesador de texto");
@@ -216,7 +385,9 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jPanel3.add(filler2);
 
         txtTamaño.setFocusable(false);
-        txtTamaño.setMinimumSize(new java.awt.Dimension(100, 22));
+        txtTamaño.setMaximumSize(new java.awt.Dimension(122, 52));
+        txtTamaño.setMinimumSize(new java.awt.Dimension(122, 52));
+        txtTamaño.setPreferredSize(new java.awt.Dimension(122, 52));
         jPanel3.add(txtTamaño);
 
         jPanel2.add(jPanel3);
@@ -266,6 +437,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
+        MenuAbrir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuAbrir.setText("Abrir");
         MenuAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,6 +446,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         });
         jMenu1.add(MenuAbrir);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setText("Guardar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,6 +455,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        MeunGuardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MeunGuardar.setText("Guardar como...");
         MeunGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,6 +464,7 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         });
         jMenu1.add(MeunGuardar);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem3.setText("Salir");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -319,6 +494,11 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         jMenu2.add(btnColor);
 
         jMenuItem5.setText("Color");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -376,12 +556,10 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
                     var sc = new Scanner(texto.getText());
                     var bfw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(direccion),"UTF-8"));
             ){
-                sc.useDelimiter("\n");
-                while(sc.hasNext()){
+                while (sc.hasNext()) {
                     bfw.write(sc.nextLine());
                     bfw.newLine();
                 }
-                sc.close();
             }catch(IOException e){
                 Logger.getLogger(ProcesadorDeTexto.class.getName()).log(Level.SEVERE, null, e);
             }
@@ -405,7 +583,6 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
                 bfw.write(sc.nextLine());
                 bfw.newLine();
             }
-            sc.close();
         } catch (IOException e) {
             Logger.getLogger(ProcesadorDeTexto.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -586,44 +763,48 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
         dialogFuente.dispose();
     }//GEN-LAST:event_btnAceptarFuenteActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        dialogColor.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void btnColorAzulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorAzulActionPerformed
+        // TODO add your handling code here:
+        texto.setForeground(Color.BLUE);
+    }//GEN-LAST:event_btnColorAzulActionPerformed
+
+    private void btnColorAzulOscuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorAzulOscuroActionPerformed
+        // TODO add your handling code here:
+        texto.setForeground(Color.GRAY);
+    }//GEN-LAST:event_btnColorAzulOscuroActionPerformed
+
+    private void btnColorRojoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorRojoActionPerformed
+        // TODO add your handling code here:
+        texto.setForeground(Color.RED);
+    }//GEN-LAST:event_btnColorRojoActionPerformed
+
+    private void btnColorCyanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorCyanActionPerformed
+        // TODO add your handling code here:
+        texto.setForeground(Color.cyan);
+    }//GEN-LAST:event_btnColorCyanActionPerformed
+
+    private void btnColorVerdeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorVerdeActionPerformed
+        // TODO add your handling code here:
+        texto.setForeground(Color.green);
+    }//GEN-LAST:event_btnColorVerdeActionPerformed
+
+    private void btnColorRosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColorRosaActionPerformed
+        // TODO add your handling code here:
+        texto.setForeground(Color.PINK);
+    }//GEN-LAST:event_btnColorRosaActionPerformed
+
     private void txtPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPruebaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPruebaActionPerformed
 
     /**
      * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProcesadorDeTexto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProcesadorDeTexto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProcesadorDeTexto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProcesadorDeTexto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProcesadorDeTexto().setVisible(true);
-            }
-        });
-    }
+     */    
     
     public void openWebPage(String url) {
         try {
@@ -638,23 +819,55 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
     private javax.swing.JMenuItem MeunGuardar;
     private javax.swing.JButton btnAceptarFuente;
     private javax.swing.JMenuItem btnColor;
+    private javax.swing.JButton btnColorAzul;
+    private javax.swing.JButton btnColorAzulOscuro;
+    private javax.swing.JButton btnColorCyan;
+    private javax.swing.JButton btnColorRojo;
+    private javax.swing.JButton btnColorRosa;
+    private javax.swing.JButton btnColorVerde;
     private javax.swing.JButton btnRepo;
     private javax.swing.JComboBox<String> comboBoxFuentes;
+    private javax.swing.JDialog dialogColor;
     private javax.swing.JDialog dialogFuente;
     private javax.swing.JFileChooser fileChooser;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler10;
+    private javax.swing.Box.Filler filler11;
+    private javax.swing.Box.Filler filler12;
+    private javax.swing.Box.Filler filler13;
+    private javax.swing.Box.Filler filler14;
+    private javax.swing.Box.Filler filler15;
+    private javax.swing.Box.Filler filler16;
+    private javax.swing.Box.Filler filler17;
+    private javax.swing.Box.Filler filler18;
+    private javax.swing.Box.Filler filler19;
     private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler20;
+    private javax.swing.Box.Filler filler21;
+    private javax.swing.Box.Filler filler22;
+    private javax.swing.Box.Filler filler23;
+    private javax.swing.Box.Filler filler24;
+    private javax.swing.Box.Filler filler25;
+    private javax.swing.Box.Filler filler26;
+    private javax.swing.Box.Filler filler27;
+    private javax.swing.Box.Filler filler28;
+    private javax.swing.Box.Filler filler29;
     private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler30;
+    private javax.swing.Box.Filler filler31;
     private javax.swing.Box.Filler filler4;
     private javax.swing.Box.Filler filler5;
     private javax.swing.Box.Filler filler6;
     private javax.swing.Box.Filler filler7;
+    private javax.swing.Box.Filler filler8;
+    private javax.swing.Box.Filler filler9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -664,7 +877,14 @@ public class ProcesadorDeTexto extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
